@@ -1,0 +1,57 @@
+{
+  "name": "linrui-admin-vue-tailwindcss",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@9.0.4",
+  "description": "linrui admin templeate base on vue and tailwindcss",
+  "author": {
+    "name": "wellenliang",
+    "email": "wellenliang@163.com"
+  },
+  "license": "MIT",
+  "homepage": "https://gitee.com/wellenliang/linrui-admin-vue-tailwindcss",
+  "repository": {
+    "type": "git",
+    "url": "ssh+https://gitee.com/wellenliang/linrui-admin-vue-tailwindcss.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/wellenliang/linrui-admin-vue-tailwindcss/issues"
+  },
+  "keywords": [
+    "vue",
+    "admin",
+    "tailwindcss",
+    "naive-ui",
+    "vuetify"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.1.1",
+    "@stylistic/eslint-plugin": "^1.7.2",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
+    "eslint-plugin-vitest": "^0.5.3",
+    "eslint-plugin-vue": "^9.25.0",
+    "globals": "^15.0.0",
+    "lint-staged": "^15.2.2",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.4.5"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no-install commitlint --edit $1",
+    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "eslint --fix"
+    ]
+  }
+}
