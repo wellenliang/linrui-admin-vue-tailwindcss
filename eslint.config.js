@@ -1,13 +1,21 @@
-import stylistic from '@stylistic/eslint-plugin';
-export default [
+import antfu from '@antfu/eslint-config';
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
+
+export default antfu(
   {
-    plugins: {
-      '@stylistic': stylistic,
+    stylistic: {
+      indent: 2,
+      quotes: 'single',
+      semi: true,
     },
-    rules: {
-      '@stylistic/indent': ['error', 2],
-      '@stylistic/quotes': ['error', 'single'],
-      '@stylistic/semi': ['error', 'always', { 'omitLastInOneLineClassBody': true }]
-    }
-  }
-];
+
+    typescript: true,
+    vue: true,
+    jsonc: false,
+    yaml: false,
+  },
+  {
+    plugins: [tailwindcssPlugin],
+    rules: {},
+  },
+);
